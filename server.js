@@ -6,15 +6,19 @@ const server = http.createServer((req, res) => {
   switch (req.url) {
     case "/":
       fileName = "home.html";
+      res.statusCode = 200;
       break;
     case "/about":
       fileName = "about.html";
+      res.statusCode = 200;
       break;
     case "/contact":
       fileName = "contact.html";
+      res.statusCode = 200;
       break;
     default:
       fileName = "404.html";
+      res.statusCode = 404;
       break;
   }
 
