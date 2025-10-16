@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
-    <h1>Hello from html file</h1>
-    <p>Nice to meet you friends!</p>
-    <p>home ejs file</p>
-    <p>It was really connect with nodejs server.</p>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <% if(books.length){ %>
+  <% books.forEach(book =>{ %>
+  <h1>title : <%= book.title %></h1>
+  <h2>price : <%= book.price %></h2>
+  <h3>intro : <%= book.intro %></h3>
+  <% }); %>
+  <% }%>
+</body>
+
 </html>

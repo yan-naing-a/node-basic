@@ -6,7 +6,28 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("home");
+  const books = [
+    {
+      title: "The Pragmatic Programmer",
+      price: 39.99,
+      introduction:
+        "A classic book on software engineering and best practices.",
+    },
+    {
+      title: "Clean Code",
+      price: 34.95,
+      introduction:
+        "A handbook of agile software craftsmanship by Robert C. Martin.",
+    },
+    {
+      title: "JavaScript: The Good Parts",
+      price: 29.99,
+      introduction:
+        "Douglas Crockford's guide to the best features of JavaScript.",
+    },
+  ];
+
+  res.render("home", { books });
 });
 
 app.get("/about", (req, res) => {
