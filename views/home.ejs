@@ -5,13 +5,19 @@
 
 <body>
   <%- include('./components/navbar.ejs') %>
-  <% if(books.length){ %>
-  <% books.forEach(book =>{ %>
-  <h1>title : <%= book.title %></h1>
-  <h2>price : <%= book.price %></h2>
-  <h3>intro : <%= book.intro %></h3>
-  <% }); %>
-  <% }%>
+  <div class="container">
+    <% if(books.length){ %>
+    <% books.forEach(book =>{ %>
+    <div class="single-card">
+      <h1>title : <%= book.title %></h1>
+      <h2>price : <%= book.price %></h2>
+      <h3>intro : <%= book.introduction %></h3>
+    </div>
+
+    <% }); %>
+    <% }%>
+  </div>
+
 </body>
 
 </html>
