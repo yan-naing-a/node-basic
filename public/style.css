@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+nav {
+  background-color: rgb(117, 117, 241);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav .page-routes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-routes .single-route {
+  background-color: rgb(245, 201, 119);
+  padding: 6px;
+  border-radius: 6px;
+  color: black;
+  border: 1px solid transparent;
+}
+
+.page-routes .single-route:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid orange;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.container .single-card {
+  border: 1px solid rgb(226, 224, 224);
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+nav {
+  background-color: rgb(117, 117, 241);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav .page-routes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-routes .single-route {
+  background-color: rgb(245, 201, 119);
+  padding: 6px;
+  border-radius: 6px;
+  color: black;
+  border: 1px solid transparent;
+}
+
+.page-routes .single-route:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid orange;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.container .single-card {
+  border: 1px solid rgb(226, 224, 224);
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}

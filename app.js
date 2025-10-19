@@ -1,14 +1,26 @@
 const express = require("express");
+let morgan = require("morgan");
 
 const app = express();
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.use((req, res, next) => {
-  console.log("first middleware is running");
-  next();
-});
+/* 
+//npm package behind the senses
+
+const logger = (env) => {
+  return (req, res, next) => {
+    if (env === "dev") {
+      console.log(`${req.method} ${req.originalUrl} - -`);
+    }
+    next();
+  };
+};
+app.use(logger("dev")); */
+
+app.use(morgan("dev"));
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   const books = [
@@ -37,11 +49,6 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
-});
-
-app.use((req, res, next) => {
-  console.log("second middleware is running");
-  next();
 });
 
 app.get("/contact", (req, res) => {
