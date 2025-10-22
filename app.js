@@ -1,10 +1,38 @@
 const express = require("express");
 let morgan = require("morgan");
+const mongoose = require("mongoose");
+const Blog = require("./models/Blog");
 
 const app = express();
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
+
+const mongoUrl =
+  "mongodb+srv://yannaingaung:test1234@cluster0.ftvrb2i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+mongoose
+  .connect(mongoUrl)
+  .then(() => {
+    console.log("connect to mongoDb");
+    app.listen(3000, () => {
+      console.log("Server is listening on port 3000");
+    });
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
+app.get("/add-blog", async (req, res) => {
+  const blog = new Blog({
+    title: "My Blog 1",
+    introduction: "My Blog intro 1",
+    body: "My Blog body 1",
+  });
+
+  await blog.save();
+  res.send("Blog saved");
+});
 
 /* 
 //npm package behind the senses
@@ -57,8 +85,4 @@ app.get("/contact", (req, res) => {
 
 app.use((req, res) => {
   res.status(404).render("404", { title: "404 Not Found" });
-});
-
-app.listen(3000, () => {
-  console.log("Server is listening on port 3000");
 });
