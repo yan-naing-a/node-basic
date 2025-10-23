@@ -1,19 +1,19 @@
 <div class="blog-create">
   <h1 class="blog-header">blog create form</h1>
-  <form action="" class="blog-create-form">
+  <form action="/blogs" method="POST" class="blog-create-form">
     <div class="form-group">
-      <label for="" class="form-label">title</label>
-      <input type="text" placeholder="enter title" class="form-input" />
+      <label for="title" class="form-label">title</label>
+      <input name="title" type="text" placeholder="enter title" class="form-input" />
     </div>
     <div class="form-group">
-      <label for="" class="form-label">price</label>
-      <input type="text" placeholder="enter price" class="form-input" />
+      <label for="introduction" class="form-label">introduction</label>
+      <input name="introduction" type="text" placeholder="enter intro" class="form-input" />
     </div>
     <div class="form-group">
-      <label for="" class="form-label">introduction</label>
-      <textarea name="" id="" placeholder="enter introduction" class="form-textarea"></textarea>
+      <label for="body" class="form-label">body</label>
+      <textarea name="body" placeholder="enter body" class="form-textarea"></textarea>
     </div>
-    <div class="form-group">
+    <div>
       <button type="submit" class="form-btn">Create</button>
     </div>
 
