@@ -2,7 +2,9 @@
 <% if(blogs.length){ %>
 <% blogs.forEach(blog =>{ %>
 <div class="single-card">
-  <h1>title : <%= blog.title %></h1>
+  <a href="/single-blog/<%= blog._id %>">
+    <h1>title : <%= blog.title %></h1>
+  </a>
   <h2>introduction : <%= blog.introduction %></h2>
   <h3>body : <%= blog.body %></h3>
 </div>

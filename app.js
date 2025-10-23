@@ -37,9 +37,11 @@ app.get("/", async (req, res) => {
   const blogs = await Blog.find().sort({ createdAt: -1 });
   res.render("home", { blogs, title: "Home" });
 });
-app.get("/single-blog", async (req, res) => {
-  const blog = await Blog.findById("68f8d17c9b433efb1a34792a");
-  res.json(blog);
+app.get("/single-blog/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const blog = await Blog.findById(id);
+  res.render("blogs/view", { blog, title: "Single blog" });
 });
 
 app.post("/blogs", async (req, res) => {
