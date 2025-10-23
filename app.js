@@ -2,11 +2,9 @@ const express = require("express");
 let morgan = require("morgan");
 const mongoose = require("mongoose");
 const Blog = require("./models/Blog");
+const expressLayouts = require("express-ejs-layouts");
 
 const app = express();
-
-app.set("views", "./views");
-app.set("view engine", "ejs");
 
 const mongoUrl =
   "mongodb+srv://yannaingaung:test1234@cluster0.ftvrb2i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -23,56 +21,37 @@ mongoose
     console.log(e);
   });
 
+app.set("views", "./views");
+app.set("view engine", "ejs");
+app.use(expressLayouts);
+app.set("layout", "layouts/default");
+
+app.use(morgan("dev"));
+app.use(express.static("public"));
+
 app.get("/add-blog", async (req, res) => {
   const blog = new Blog({
-    title: "My Blog 1",
-    introduction: "My Blog intro 1",
-    body: "My Blog body 1",
+    title: "My Blog 3",
+    introduction: "My Blog intro 3",
+    body: "My Blog body 3",
   });
 
   await blog.save();
   res.send("Blog saved");
 });
 
-/* 
-//npm package behind the senses
+app.get("/blogs/create", async (req, res) => {
+  res.render("blogs/create", { title: "Blog Create" });
+});
+app.get("/", async (req, res) => {
+  const blogs = await Blog.find().sort({ createdAt: -1 });
 
-const logger = (env) => {
-  return (req, res, next) => {
-    if (env === "dev") {
-      console.log(`${req.method} ${req.originalUrl} - -`);
-    }
-    next();
-  };
-};
-app.use(logger("dev")); */
+  res.render("home", { blogs, title: "Home" });
+});
+app.get("/single-blog", async (req, res) => {
+  const blog = await Blog.findById("68f8d17c9b433efb1a34792a");
 
-app.use(morgan("dev"));
-app.use(express.static("public"));
-
-app.get("/", (req, res) => {
-  const books = [
-    {
-      title: "The Pragmatic Programmer",
-      price: 39.99,
-      introduction:
-        "A classic book on software engineering and best practices.",
-    },
-    {
-      title: "Clean Code",
-      price: 34.95,
-      introduction:
-        "A handbook of agile software craftsmanship by Robert C. Martin.",
-    },
-    {
-      title: "JavaScript: The Good Parts",
-      price: 29.99,
-      introduction:
-        "Douglas Crockford's guide to the best features of JavaScript.",
-    },
-  ];
-
-  res.render("home", { books, title: "Home" });
+  res.json(blog);
 });
 
 app.get("/about", (req, res) => {
