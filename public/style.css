@@ -1,68 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-nav {
-  background-color: rgb(117, 117, 241);
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-}
-
-nav .page-routes {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.page-routes .single-route {
-  background-color: rgb(245, 201, 119);
-  padding: 6px;
-  border-radius: 6px;
-  color: black;
-  border: 1px solid transparent;
-}
-
-.page-routes .single-route:hover {
-  background-color: transparent;
-  color: white;
-  border: 1px solid orange;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.container .single-card {
-  border: 1px solid rgb(226, 224, 224);
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
-* {
-  margin: 0;
-  padding: 0;
   font-family: monospace;
 }
-
+/* navbar */
 nav {
   background-color: rgb(117, 117, 241);
   display: flex;
   justify-content: space-between;
   padding: 20px;
 }
-
 nav a {
   text-decoration: none;
   color: white;
@@ -73,7 +20,6 @@ nav .page-routes {
   align-items: center;
   gap: 10px;
 }
-
 .page-routes .single-route {
   background-color: rgb(245, 201, 119);
   padding: 6px;
@@ -81,20 +27,24 @@ nav .page-routes {
   color: black;
   border: 1px solid transparent;
 }
-
 .page-routes .single-route:hover {
   background-color: transparent;
   color: white;
   border: 1px solid orange;
 }
 
+/* all page design */
 .container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: flex-start;
-  margin-top: 10px;
-  margin-left: 10px;
+  gap: 10px;
+}
+.container .blog-header {
+  margin-bottom: 20px;
 }
 
 .container .single-card {
@@ -102,4 +52,50 @@ nav .page-routes {
   padding: 10px;
   border-radius: 4px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* blog create form */
+.blog-create {
+  margin: 0 auto;
+}
+.blog-create .blog-create-form {
+  width: 800px;
+  border: 2px solid #dadada;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.blog-create-form .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group .form-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group .form-input {
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  outline: none;
+}
+.form-group .form-textarea {
+  height: 100px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  outline: none;
+}
+.form-group .form-btn {
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(117, 117, 241);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
 }
