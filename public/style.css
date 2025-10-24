@@ -54,6 +54,18 @@ nav .page-routes {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.delete-btn {
+  margin-top: 8px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}
+
 /* blog create form */
 .blog-create {
   margin: 0 auto;

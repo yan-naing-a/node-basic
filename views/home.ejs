@@ -7,6 +7,9 @@
   </a>
   <h2>introduction : <%= blog.introduction %></h2>
   <h3>body : <%= blog.body %></h3>
+  <form action="/blogs/<%= blog._id %>/delete" method="POST">
+    <button type="submit" class="delete-btn">Delete</button>
+  </form>
 </div>
 <% }); %>
 <% }%>
